@@ -55,9 +55,9 @@
 
 
     </form>
-    </div> <!-- end card-body -->
-    </div>
-    <!-- end card -->
+{{--    </div> <!-- end card-body -->--}}
+{{--    </div>--}}
+{{--    <!-- end card -->--}}
 
     <div class="row mt-3">
         <div class="col-12 text-center">
@@ -68,12 +68,12 @@
     </div>
     <!-- end row -->
 
-    </div> <!-- end col -->
-    </div>
-    <!-- end row -->
-    </div>
-    <!-- end container -->
-    </div>
-    <!-- end page -->
+{{--    </div> <!-- end col -->--}}
+{{--    </div>--}}
+{{--    <!-- end row -->--}}
+{{--    </div>--}}
+{{--    <!-- end container -->--}}
+{{--    </div>--}}
+{{--    <!-- end page -->--}}
 
 @endsection

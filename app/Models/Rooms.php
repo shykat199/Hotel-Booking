@@ -17,13 +17,23 @@ class Rooms extends Model
         return $this->hasOne(Pricing::class,'room_id');
     }
 
-    public function features(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function category(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->hasMany(Features::class);
+        return $this->belongsTo(Categorie::class,'room_category_id');
     }
-    public function facilities(): \Illuminate\Database\Eloquent\Relations\HasMany
+
+    public function features(): \Illuminate\Database\Eloquent\Relations\HasManyThrough
     {
-        return $this->hasMany(Facilities::class);
+        return $this->hasManyThrough(Features::class, RoomFeatures::class, 'room_id', 'id');
+    }
+    public function facilities(): \Illuminate\Database\Eloquent\Relations\HasManyThrough
+    {
+        return $this->hasManyThrough(Facilities::class, RoomFacilities::class,'room_id','id');
+    }
+
+    public function bookings(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(RoomBooking::class, 'room_id');
     }
 
 }

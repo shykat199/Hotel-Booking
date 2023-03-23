@@ -29,6 +29,7 @@
         <div class="mb-3">
             <label for="example-image" class="form-label">Staff Images</label>
             <input type="file" id="example-image" class="form-control" value="{{$edtStaff->image}}" name="image" placeholder="image">
+            <img src="{{asset('storage/staff-images/'.$edtStaff->image)}}" style="width: 100px;height: auto">
         </div>
         @error('image')
         <span class="text-danger">{{$message}}</span>

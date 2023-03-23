@@ -1,6 +1,4 @@
 
-
-
 <div class="navbar-custom">
     <ul class="list-unstyled topbar-menu float-end mb-0">
         <li class="dropdown notification-list d-lg-none">

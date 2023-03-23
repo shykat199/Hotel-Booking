@@ -23,12 +23,14 @@
       data-rightbar-onstart="true">
 <!-- Begin page -->
 <div class="wrapper">
+
     @include('admin.admin_layout.left_sidebar')
     <div class="content-page">
         <div class="content">
             @include('admin.admin_layout.top_bar')
 
             @yield('admin')
+{{--            {{ dd(1) }}--}}
 
         </div>
         <!-- content -->
@@ -86,7 +88,7 @@
 <script src="{{asset('assets')}}/js/pages/demo.datatable-init.js"></script>
 <script>
     $(".form-control1").select2({
-        tags: true
+        tags: false
     });
 </script>
 </body>
@@ -94,38 +96,3 @@
 <!-- Mirrored from coderthemes.com/hyper/saas/crm-dashboard.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 13 May 2022 20:22:38 GMT -->
 </html>
 
-<!-- Footer Start -->
-<footer class="footer">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-6">
-                <script>document.write(new Date().getFullYear())</script>
-                © Hyper - Coderthemes.com
-            </div>
-            <div class="col-md-6">
-                <div class="text-md-end footer-links d-none d-md-block">
-                    <a href="javascript: void(0);">About</a>
-                    <a href="javascript: void(0);">Support</a>
-                    <a href="javascript: void(0);">Contact Us</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-<!-- end Footer -->
-
-</div>
-
-<!-- ============================================================== -->
-<!-- End Page content -->
-<!-- ============================================================== -->
-
-
-</div>
-<!-- END wrapper -->
-
-
-<!-- Right Sidebar -->
-
-<div class="rightbar-overlay"></div>
-<!-- /End-bar -->
