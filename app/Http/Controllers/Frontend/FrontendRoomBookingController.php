@@ -45,21 +45,39 @@ class FrontendRoomBookingController extends Controller
 //        dd(request('arrive_date'));
         $roomGrid = Rooms::select('rooms.*')
             ->whereHas('bookings', function ($where) {
-//                $where->whereNotBetween('arrive_date', [request('arrive_date'), request('depart_date')]);
-//                $where->whereNotBetween('depart_date',[request('arrive_date'),request('depart_date')]);
+                $where->where(function ($whereCondition) {
+                    $whereCondition->whereNotBetween('arrive_date', [request('arrive_date'), request('depart_date')]);
+                    $whereCondition->orWhere('arrive_date','>=',request('depart_date'));
+                })
+                    ->where(function ($whereCondition) {
+                        $whereCondition->whereNotBetween('depart_date',[request('arrive_date'),request('depart_date')]);
+                        $whereCondition->orWhere('depart_date','>=',request('arrive_date'));
+                    })
+                ;
 
-                $where->where('arrive_date','>',request('arrive_date'));
-                $where->where('depart_date','<=',request('arrive_date'));
-                $where->where('arrive_date','>=',request('depart_date'));
+//                $where->where('arrive_date','<',request('arrive_date'));
+//                $where->where('arrive_date','>=',request('depart_date'));
+//                $where->where('depart_date','>',request('depart_date'));
+//                $where->where('depart_date','>=',request('arrive_date'));
             })
             ->doesntHave('bookings', 'or')
+//            ->doesntHave('bookings', function ($where) {
+//
+//                $where->where(function ($whereCondition) {
+////                   $whereCondition->where('arrive_date','<',request('arrive_date'));
+////                   $whereCondition->where('depart_date','>',request('arrive_date'));
+//                });
+////                $where->where('arrive_date','>=',request('depart_date'));
+////                $where->where('depart_date','>',request('depart_date'));
+////                $where->where('depart_date','>=',request('arrive_date'));
+//            })
             ->with('bookings')->get();
 //        dd($roomGrid);
 
         return view('frontend.room_grid_page',compact('roomGrid'));
 
-        dd($rooms);
-        return $rooms? 'yes':'no';
+//        dd($rooms);
+//        return $rooms? 'yes':'no';
 
     }
 }
