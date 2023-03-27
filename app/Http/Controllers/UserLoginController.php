@@ -21,9 +21,16 @@ class UserLoginController extends Controller
             'email'=> $user->email,
             'password'=> $password
 
-
         ])){
-            return redirect()->route('admin.dashboard.file')->with('success','Log in Successfully');
+            if ((Auth::user()->roll == '1')){
+                return redirect()->route('admin.dashboard.file')->with('success','Admin log in Successfully');
+            }
+            else if(Auth::user()->roll == '2'){
+                return redirect()->route('user.dashboard.page')->with('success','User log in Successfully');
+            }else{
+                return "Invalid User";
+            }
+
         }
         else{
             return Redirect::back()->with('fail','Invalid User!');
@@ -38,6 +45,8 @@ class UserLoginController extends Controller
     {
         //
     }
+
+
 
     /**
      * Store a newly created resource in storage.
@@ -58,24 +67,6 @@ class UserLoginController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
 }

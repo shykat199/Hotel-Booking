@@ -24,7 +24,7 @@ class UserRegisterRequest extends FormRequest
         return [
             'name'=>['required','max:55'],
             'phone'=>['required'],
-            'email'=>['required','unique:users','email:rfc,dns'],
+            'email'=>['required','unique:user','email'],
             'password'=>['required','min:5','max:8'],
 
         ];

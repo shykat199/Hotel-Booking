@@ -22,7 +22,7 @@ class UserLoginRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'email'=>['required','email:rfc,dns'],
+            'email'=>['required','email'],
             'password'=>['required','min:5','max:8']
         ];
     }

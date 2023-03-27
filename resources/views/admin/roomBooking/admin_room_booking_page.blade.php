@@ -8,8 +8,8 @@
             <th>Depart-date</th>
             <th>Guest</th>
             <th>Child</th>
-            <th>User_id</th>
-            <th>Room_id</th>
+            <th>User Name</th>
+            <th>Room Name</th>
             <th>Per_day_cost</th>
             <th>Total_cost</th>
 {{--            <th class="text-center">Action</th>--}}
@@ -24,8 +24,8 @@
                 <td>{{$list->depart_date}}</td>
                 <td>{{$list->guests}}</td>
                 <td>{{$list->child}}</td>
-                <td>{{$list->user_id}}</td>
-                <td>{{$list->room_id}}</td>
+                <td>{{$list->name}}</td>
+                <td>{{$list->title}}</td>
                 <td>{{$list->per_day_cost}}</td>
                 <td>{{$list->total_cost}}</td>
 

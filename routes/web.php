@@ -88,6 +88,10 @@ Route::get('/category/list/delete/{id}',[\App\Http\Controllers\admin\CategoryCon
 //category edit......
 Route::get('/category/edit/list/{id}',[\App\Http\Controllers\admin\CategoryController::class,'edit'])->name('category.edit.list');
 Route::post('/category/update/list',[\App\Http\Controllers\admin\CategoryController::class,'update'])->name('category.update.lis');
+//setting//.......
+Route::get('/setting',[\App\Http\Controllers\admin\SettingController::class,'index'])->name('setting.index.page');
+
+
 
 //Service//......
 //add service page//...........
@@ -136,3 +140,12 @@ Route::middleware('auth')->group(function () {
 Route::get('/admin/room/booking',[\App\Http\Controllers\admin\AdmindRoomBookingController::class,'roomBooking'])->name('admin.roomBooking.page')->middleware('auth');
 //room booking search is available??//.........
 Route::get('/room/search',[\App\Http\Controllers\frontend\FrontendRoomBookingController::class,'roomSearch'])->name('room.search');
+
+Route::middleware(['auth'])->group(function (){
+    //user page starts//...............
+    Route::get('/user/dashboard',[\App\Http\Controllers\user\UserDashboardController::class,'dashboard'])->name('user.dashboard.page');
+//user login details//.......
+//    Route::get('/user/details',[\App\Http\Controllers\UserDashboardController::class,'userLoginDetails'])->name('user-login.user-login-details');
+    Route::get('/user/details',[\App\Http\Controllers\user\UserDashboardController::class,'userLoginDetails'])->name('user-login.user-login-details');
+});
+
