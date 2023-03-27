@@ -2678,4 +2678,95 @@ body a:hover {
 }
 .our-gallery-card .our-gallery-card-top .photo-album .our-gallery-single-card .card-img-top {
   height: 300px;
+}
+
+.single-content {
+  background-color: rgb(240, 244, 248);
+  box-shadow: 0 1rem 3rem rgba(var(--bs-body-color-rgb), 0.175);
+  overflow: hidden;
+  margin-bottom: 30px;
+  border-bottom: 1px solid rgb(34, 34, 83);
+}
+.single-content:hover .img-div img {
+  transform: scale(1.1);
+}
+.single-content:hover .single-blog-title h4 {
+  color: rgb(34, 34, 83);
+}
+.single-content .img-div {
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.single-content .img-div img {
+  max-width: 100%;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+.single-content .single-blog-title {
+  padding: 10px 15px;
+  max-height: 300px;
+}
+.single-content .single-blog-title h4 {
+  font-size: 20px;
+  line-height: 30px;
+  color: #393838;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+}
+.single-content .single-blog-authore {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 997px) {
+  .single-content .single-blog-authore {
+    display: block;
+  }
+}
+.single-content .single-blog-authore li {
+  font-size: 14px;
+  color: #6b6969;
+}
+@media (max-width: 997px) {
+  .single-content .single-blog-authore li {
+    margin: 5px 0;
+  }
+}
+.single-content .single-blog-authore li span {
+  margin-left: 10px;
+}
+
+.blog-details {
+  margin-bottom: 30px;
+}
+.blog-details .single-blog-authore {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+.blog-details .single-blog-authore li {
+  font-size: 14px;
+  color: #6b6969;
+}
+.blog-details .single-blog-authore li span {
+  margin-left: 10px;
+}
+.blog-details h4 {
+  font-size: 30px;
+  line-height: 40px;
+  color: #393838;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+}
+@media (max-width: 576px) {
+  .blog-details h4 {
+    font-size: 25px;
+    line-height: 30px;
+  }
+}
+@media (max-width: 425px) {
+  .blog-details h4 {
+    font-size: 20px;
+    line-height: 30px;
+  }
 }/*# sourceMappingURL=style.css.map */

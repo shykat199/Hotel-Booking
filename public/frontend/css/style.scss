@@ -1168,7 +1168,7 @@ body {
 
 }
 
-// footer 
+// footer
 .footer {
   background: rgb(3, 3, 45);
   padding-bottom: 20px;
@@ -3053,3 +3053,105 @@ body {
     }
   }
 }
+
+
+
+
+// blog list page start
+.single-content {
+    background-color: rgb(240, 244, 248);
+    box-shadow: 0 1rem 3rem rgba(var(--bs-body-color-rgb),.175);
+    overflow: hidden;
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgb(34, 34, 83);
+    &:hover{
+      .img-div{
+        img{
+          transform: scale(1.1);
+        }
+      }
+      .single-blog-title {
+        h4 {
+          color: rgb(34, 34, 83);
+        }
+      }
+    }
+    .img-div{
+      overflow: hidden;
+      transition: all .3s ease;
+      img {
+        max-width: 100%;
+        width: 100%;
+        transition: all .3s ease;
+      }
+    }
+    .single-blog-title {
+      padding: 10px 15px;
+      max-height: 300px;
+      h4 {
+        font-size: 20px;
+        line-height: 30px;
+        color: #393838;
+        margin-bottom: 10px;
+        transition: all .3s ease;
+      }
+    }
+    .single-blog-authore {
+      display: flex;
+      justify-content: space-between;
+      @media (max-width: 997px) {
+        display: block;
+      }
+      li {
+        font-size: 14px;
+        color: #6b6969;
+        @media (max-width: 997px) {
+          margin: 5px 0;
+        }
+        span {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+  //blog list page end
+
+
+  //blog details page start
+  .blog-details {
+    margin-bottom: 30px;
+    .single-blog-authore {
+      display: flex;
+      justify-content: space-between;
+      margin: 10px 0;
+      li {
+        font-size: 14px;
+        color: #6b6969;
+        span {
+          margin-left: 10px;
+        }
+      }
+    }
+
+    h4 {
+      font-size: 30px;
+      line-height: 40px;
+      color: #393838;
+      margin-bottom: 10px;
+      transition: all .3s ease;
+      margin-bottom: 20px;
+      @media (max-width: 576px) {
+        font-size: 25px;
+        line-height: 30px;
+      }
+      @media (max-width: 425px) {
+        font-size: 20px;
+        line-height: 30px;
+      }
+    }
+  }
+  //blog details page end
+
+
+
+

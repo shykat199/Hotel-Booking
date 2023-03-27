@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\admin\BlogController;
+use App\Http\Controllers\admin\BlogDetailsController;
+
+
 
 
 //login page.....
@@ -136,3 +140,10 @@ Route::middleware('auth')->group(function () {
 Route::get('/admin/room/booking',[\App\Http\Controllers\admin\AdmindRoomBookingController::class,'roomBooking'])->name('admin.roomBooking.page')->middleware('auth');
 //room booking search is available??//.........
 Route::get('/room/search',[\App\Http\Controllers\frontend\FrontendRoomBookingController::class,'roomSearch'])->name('room.search');
+
+
+//fontend blog list...........
+Route::get('/blog/list', [BlogController::class,'blogFunction'])->name('blog.list');
+
+//fontend blog Details.....
+Route::get('/blog/details', [BlogDetailsController::class, 'blogDetailsFunction'])->name('blog.details');
