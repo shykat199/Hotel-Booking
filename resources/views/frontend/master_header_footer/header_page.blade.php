@@ -126,7 +126,6 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item text-dark" href="{{route('blog.list')}}">Blog List</a></li>
-                            <li><a class="dropdown-item text-dark" href="{{route('blog.details')}}">Blog Details</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
