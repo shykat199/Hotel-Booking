@@ -28,293 +28,310 @@
             our-gallery-card-top">
                 <div class="tabs">
                     <ul>
-                        <li>
-                            <button class="tablinks border-0 bg-light small fw-semibold"
-                                    onclick="openGalleryTab(event, 'ShowAll')" id="defaultOpen">Show All</button>
-                        </li>
-                        <li>
-                            <button class="tablinks border-0 bg-light small fw-semibold"
-                                    onclick="openGalleryTab(event, 'Luxury')">Luxury</button>
-                        </li>
-                        <li>
-                            <button class="tablinks border-0 bg-light small fw-semibold"
-                                    onclick="openGalleryTab(event, 'Twieen')">Twieen</button>
-                        </li>
-                        <li>
-                            <button class="tablinks border-0 bg-light small fw-semibold"
-                                    onclick="openGalleryTab(event, 'Couple')">Couple</button>
-                        </li>
-                        <li>
-                            <button class="tablinks border-0 bg-light small fw-semibold"
-                                    onclick="openGalleryTab(event, 'Family')">Family</button>
-                        </li>
-                        <li>
-                            <button class="tablinks border-0 bg-light small fw-semibold"
-                                    onclick="openGalleryTab(event, 'Conference')">Conference</button>
-                        </li>
-
+{{--                        <li>--}}
+{{--                            <button class="tablinks border-0 bg-light small fw-semibold"--}}
+{{--                                    onclick="openGalleryTab(event, 'ShowAll')" id="defaultOpen">Show All</button>--}}
+{{--                        </li>--}}
+{{--                        <li>--}}
+{{--                            <button class="tablinks border-0 bg-light small fw-semibold"--}}
+{{--                                    onclick="openGalleryTab(event, 'Luxury')">Luxury</button>--}}
+{{--                        </li>--}}
+{{--                        <li>--}}
+{{--                            <button class="tablinks border-0 bg-light small fw-semibold"--}}
+{{--                                    onclick="openGalleryTab(event, 'Twieen')">Twieen</button>--}}
+{{--                        </li>--}}
+{{--                        <li>--}}
+{{--                            <button class="tablinks border-0 bg-light small fw-semibold"--}}
+{{--                                    onclick="openGalleryTab(event, 'Couple')">Couple</button>--}}
+{{--                        </li>--}}
+{{--                        <li>--}}
+{{--                            <button class="tablinks border-0 bg-light small fw-semibold"--}}
+{{--                                    onclick="openGalleryTab(event, 'Family')">Family</button>--}}
+{{--                        </li>--}}
+{{--                        <li>--}}
+{{--                            <button class="tablinks border-0 bg-light small fw-semibold"--}}
+{{--                                    onclick="openGalleryTab(event, 'Conference')">Conference</button>--}}
+{{--                        </li>--}}
                     </ul>
                 </div>
                 <div id="ShowAll" class="tabcontent">
                     <div class=" row row-cols-2 row-cols-md-3 g-4 photo-album">
+                        @foreach($myGallery as $item)
+                            <a href="javascript:void(0)" class="col our-gallery-single-card">
 
-                        <a href="javascript:void(0)" class="col our-gallery-single-card">
-                            <div class="card border-0 rounded-0 h-100 shadow-lg">
-                                <img src="{{asset('frontend')}}/images/our-project-2.jpg" class="card-img-top rounded-0"
-                                     alt="card image">
-                            </div>
-                        </a>
-                        <a href="javascript:void(0)" class="col our-gallery-single-card">
-                            <div class="card border-0 rounded-0 h-100 shadow-lg">
-                                <img src="{{asset('frontend')}}/images/our-project-48.jpg" class="card-img-top rounded-0"
-                                     alt="card image">
-                            </div>
-                        </a>
-                        <a href="javascript:void(0)" class="col our-gallery-single-card ">
-                            <div class="card border-0 rounded-0 h-100 shadow-lg">
-                                <img src="{{asset('frontend')}}/images/footer-image-1st.jpg" class="card-img-top rounded-0"
-                                     alt="card image">
-                            </div>
-                        </a>
-                        <a href="javascript:void(0)" class="col our-gallery-single-card">
-                            <div class="card border-0 rounded-0 h-100 shadow-lg">
-                                <img src="{{asset('frontend')}}/images/our-project-2.jpg" class="card-img-top rounded-0"
-                                     alt="card image">
-                            </div>
-                        </a>
-                        <a href="javascript:void(0)" class="col our-gallery-single-card">
-                            <div class="card border-0 rounded-0 h-100 shadow-lg">
-                                <img src="{{asset('frontend')}}/images/our-project-48.jpg" class="card-img-top rounded-0"
-                                     alt="card image">
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div id="Luxury" class="tabcontent">
-                    <div class=" row row-cols-2 row-cols-md-3 g-4 photo-album">
-                        <a href="javascript:void(0)" class="col our-gallery-single-card">
-                            <div class="card border-0 rounded-0 h-100 shadow-lg">
-                                <img src="{{asset('frontend')}}/images/our-project-48.jpg" class="card-img-top rounded-0"
-                                     alt="card image">
-                            </div>
-                        </a>
-                        <a href="javascript:void(0)" class="col our-gallery-single-card ">
-                            <div class="card border-0 rounded-0 h-100 shadow-lg">
-                                <img src="{{asset('frontend')}}/images/footer-image-1st.jpg" class="card-img-top rounded-0"
-                                     alt="card image">
-                            </div>
-                        </a>
-                        <a href="javascript:void(0)" class="col our-gallery-single-card">
-                            <div class="card border-0 rounded-0 h-100 shadow-lg">
-                                <img src="{{asset('frontend')}}/images/our-project-2.jpg" class="card-img-top rounded-0"
-                                     alt="card image">
-                            </div>
-                        </a>
-                        <a href="javascript:void(0)" class="col our-gallery-single-card">
-                            <div class="card border-0 rounded-0 h-100 shadow-lg">
-                                <img src="{{asset('frontend')}}/images/our-project-48.jpg" class="card-img-top rounded-0"
-                                     alt="card image">
-                            </div>
-                        </a>
-                        <a href="javascript:void(0)" class="col our-gallery-single-card ">
-                            <div class="card border-0 rounded-0 h-100 shadow-lg">
-                                <img src="{{asset('frontend')}}/images/footer-image-1st.jpg" class="card-img-top rounded-0"
-                                     alt="card image">
-                            </div>
-                        </a>
-                        <a href="javascript:void(0)" class="col our-gallery-single-card">
-                            <div class="card border-0 rounded-0 h-100 shadow-lg">
-                                <img src="{{asset('frontend')}}/images/our-project-2.jpg" class="card-img-top rounded-0"
-                                     alt="card image">
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div id="Twieen" class="tabcontent">
-                    <div class=" row row-cols-2 row-cols-md-3 g-4 photo-album">
+                                <div class="card border-0 rounded-0 h-100 shadow-lg">
 
-                        <a href="javascript:void(0)" class="col our-gallery-single-card ">
-                            <div class="card border-0 rounded-0 h-100 shadow-lg">
-                                <img src="{{asset('frontend')}}/images/footer-image-1st.jpg" class="card-img-top rounded-0"
-                                     alt="card image">
-                            </div>
-                        </a>
-                        <a href="javascript:void(0)" class="col our-gallery-single-card">
-                            <div class="card border-0 rounded-0 h-100 shadow-lg">
-                                <img src="{{asset('frontend')}}/images/our-project-48.jpg" class="card-img-top rounded-0"
-                                     alt="card image">
-                            </div>
-                        </a>
-                        <a href="javascript:void(0)" class="col our-gallery-single-card">
-                            <div class="card border-0 rounded-0 h-100 shadow-lg">
-                                <img src="{{asset('frontend')}}/images/our-project-48.jpg" class="card-img-top rounded-0"
-                                     alt="card image">
-                            </div>
-                        </a>
-                        <a href="javascript:void(0)" class="col our-gallery-single-card">
-                            <div class="card border-0 rounded-0 h-100 shadow-lg">
-                                <img src="{{asset('frontend')}}/images/our-project-2.jpg" class="card-img-top rounded-0"
-                                     alt="card image">
-                            </div>
-                        </a>
-                        <a href="javascript:void(0)" class="col our-gallery-single-card ">
-                            <div class="card border-0 rounded-0 h-100 shadow-lg">
-                                <img src="{{asset('frontend')}}/images/footer-image-1st.jpg" class="card-img-top rounded-0"
-                                     alt="card image">
-                            </div>
-                        </a>
-                        <a href="javascript:void(0)" class="col our-gallery-single-card">
-                            <div class="card border-0 rounded-0 h-100 shadow-lg">
-                                <img src="{{asset('frontend')}}/images/our-project-2.jpg" class="card-img-top rounded-0"
-                                     alt="card image">
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div id="Couple" class="tabcontent">
-                    <div class=" row row-cols-2 row-cols-md-3 g-4 photo-album">
-                        <a href="javascript:void(0)" class="col our-gallery-single-card">
-                            <div class="card border-0 rounded-0 h-100 shadow-lg">
-                                <img src="{{asset('frontend')}}/images/our-project-48.jpg" class="card-img-top rounded-0"
-                                     alt="card image">
-                            </div>
-                        </a>
-                        <a href="javascript:void(0)" class="col our-gallery-single-card ">
-                            <div class="card border-0 rounded-0 h-100 shadow-lg">
-                                <img src="{{asset('frontend')}}/images/footer-image-1st.jpg" class="card-img-top rounded-0"
-                                     alt="card image">
-                            </div>
-                        </a>
-                        <a href="javascript:void(0)" class="col our-gallery-single-card">
-                            <div class="card border-0 rounded-0 h-100 shadow-lg">
-                                <img src="{{asset('frontend')}}/images/our-project-2.jpg" class="card-img-top rounded-0"
-                                     alt="card image">
-                            </div>
-                        </a>
-                        <a href="javascript:void(0)" class="col our-gallery-single-card">
-                            <div class="card border-0 rounded-0 h-100 shadow-lg">
-                                <img src="{{asset('frontend')}}/images/our-project-48.jpg" class="card-img-top rounded-0"
-                                     alt="card image">
-                            </div>
-                        </a>
-                        <a href="javascript:void(0)" class="col our-gallery-single-card ">
-                            <div class="card border-0 rounded-0 h-100 shadow-lg">
-                                <img src="{{asset('frontend')}}/images/footer-image-1st.jpg" class="card-img-top rounded-0"
-                                     alt="card image">
-                            </div>
-                        </a>
-                        <a href="javascript:void(0)" class="col our-gallery-single-card">
-                            <div class="card border-0 rounded-0 h-100 shadow-lg">
-                                <img src="{{asset('frontend')}}/images/our-project-2.jpg" class="card-img-top rounded-0"
-                                     alt="card image">
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div id="Family" class="tabcontent">
-                    <div class=" row row-cols-2 row-cols-md-3 g-4 photo-album">
-                        <a href="javascript:void(0)" class="col our-gallery-single-card">
-                            <div class="card border-0 rounded-0 h-100 shadow-lg">
-                                <img src="{{asset('frontend')}}/images/our-project-2.jpg" class="card-img-top rounded-0"
-                                     alt="card image">
-                            </div>
-                        </a>
-                        <a href="javascript:void(0)" class="col our-gallery-single-card">
-                            <div class="card border-0 rounded-0 h-100 shadow-lg">
-                                <img src="{{asset('frontend')}}/images/our-project-48.jpg" class="card-img-top rounded-0"
-                                     alt="card image">
-                            </div>
-                        </a>
-                        <a href="javascript:void(0)" class="col our-gallery-single-card ">
-                            <div class="card border-0 rounded-0 h-100 shadow-lg">
-                                <img src="{{asset('frontend')}}/images/footer-image-1st.jpg" class="card-img-top rounded-0"
-                                     alt="card image">
-                            </div>
-                        </a>
-                        <a href="javascript:void(0)" class="col our-gallery-single-card">
-                            <div class="card border-0 rounded-0 h-100 shadow-lg">
-                                <img src="{{asset('frontend')}}/images/our-project-2.jpg" class="card-img-top rounded-0"
-                                     alt="card image">
-                            </div>
-                        </a>
-                        <a href="javascript:void(0)" class="col our-gallery-single-card">
-                            <div class="card border-0 rounded-0 h-100 shadow-lg">
-                                <img src="{{asset('frontend')}}/images/our-project-48.jpg" class="card-img-top rounded-0"
-                                     alt="card image">
-                            </div>
-                        </a>
-                        <a href="javascript:void(0)" class="col our-gallery-single-card ">
-                            <div class="card border-0 rounded-0 h-100 shadow-lg">
-                                <img src="{{asset('frontend')}}/images/footer-image-1st.jpg" class="card-img-top rounded-0"
-                                     alt="card image">
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div id="Conference" class="tabcontent">
-                    <div class=" row row-cols-2 row-cols-md-3 g-4 photo-album">
-                        <a href="javascript:void(0)" class="col our-gallery-single-card">
-                            <div class="card border-0 rounded-0 h-100 shadow-lg">
-                                <img src="{{asset('frontend')}}/images/our-project-48.jpg" class="card-img-top rounded-0"
-                                     alt="card image">
-                            </div>
-                        </a>
-                        <a href="javascript:void(0)" class="col our-gallery-single-card ">
-                            <div class="card border-0 rounded-0 h-100 shadow-lg">
-                                <img src="{{asset('frontend')}}/images/footer-image-1st.jpg" class="card-img-top rounded-0"
-                                     alt="card image">
-                            </div>
-                        </a>
-                        <a href="javascript:void(0)" class="col our-gallery-single-card">
-                            <div class="card border-0 rounded-0 h-100 shadow-lg">
-                                <img src="{{asset('frontend')}}/images/our-project-2.jpg" class="card-img-top rounded-0"
-                                     alt="card image">
-                            </div>
-                        </a>
-                        <a href="javascript:void(0)" class="col our-gallery-single-card">
-                            <div class="card border-0 rounded-0 h-100 shadow-lg">
-                                <img src="{{asset('frontend')}}/images/our-project-48.jpg" class="card-img-top rounded-0"
-                                     alt="card image">
-                            </div>
-                        </a>
-                        <a href="javascript:void(0)" class="col our-gallery-single-card ">
-                            <div class="card border-0 rounded-0 h-100 shadow-lg">
-                                <img src="{{asset('frontend')}}/images/footer-image-1st.jpg" class="card-img-top rounded-0"
-                                     alt="card image">
-                            </div>
-                        </a>
-                        <a href="javascript:void(0)" class="col our-gallery-single-card">
-                            <div class="card border-0 rounded-0 h-100 shadow-lg">
-                                <img src="{{asset('frontend')}}/images/our-project-2.jpg" class="card-img-top rounded-0"
-                                     alt="card image">
-                            </div>
-                        </a>
-                    </div>
-                </div>
+                                    <img src="{{asset('storage/gallery-images/'.$item->image)}}" class="card-img-top rounded-0"
+                                         alt="card image">
 
-                <nav class="custome-pagination" aria-label="Page navigation example">
-                    <ul class="pagination justify-content-center pt-5 custome-pagination-list">
-                        <li class="page-item custom-page-item">
-                            <a class="page-link pagination-item  rounded-pill" href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
+                                </div>
                             </a>
-                        </li>
-                        <li class="page-item custom-page-item"><a class="page-link pagination-item rounded-pill"
-                                                                  href="#">1</a>
-                        </li>
-                        <li class="page-item"><a class="page-link pagination-item rounded-pill" href="#">2</a>
-                        </li>
-                        <li class="page-item"><a class="page-link  pagination-item rounded-pill" href="#">3</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link rounded-pill pagination-item" href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+                        @endforeach
+
+
+
+
+
+{{--                        <a href="javascript:void(0)" class="col our-gallery-single-card">--}}
+{{--                            <div class="card border-0 rounded-0 h-100 shadow-lg">--}}
+{{--                                <img src="{{asset('frontend')}}/images/our-project-48.jpg" class="card-img-top rounded-0"--}}
+{{--                                     alt="card image">--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                        <a href="javascript:void(0)" class="col our-gallery-single-card ">--}}
+{{--                            <div class="card border-0 rounded-0 h-100 shadow-lg">--}}
+{{--                                <img src="{{asset('frontend')}}/images/footer-image-1st.jpg" class="card-img-top rounded-0"--}}
+{{--                                     alt="card image">--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                        <a href="javascript:void(0)" class="col our-gallery-single-card">--}}
+{{--                            <div class="card border-0 rounded-0 h-100 shadow-lg">--}}
+{{--                                <img src="{{asset('frontend')}}/images/our-project-2.jpg" class="card-img-top rounded-0"--}}
+{{--                                     alt="card image">--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                        <a href="javascript:void(0)" class="col our-gallery-single-card">--}}
+{{--                            <div class="card border-0 rounded-0 h-100 shadow-lg">--}}
+{{--                                <img src="{{asset('frontend')}}/images/our-project-48.jpg" class="card-img-top rounded-0"--}}
+{{--                                     alt="card image">--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+                    </div>
+{{--                </div>--}}
+{{--                <div id="Luxury" class="tabcontent">--}}
+{{--                    <div class=" row row-cols-2 row-cols-md-3 g-4 photo-album">--}}
+{{--                        <a href="javascript:void(0)" class="col our-gallery-single-card">--}}
+{{--                            <div class="card border-0 rounded-0 h-100 shadow-lg">--}}
+{{--                                <img src="{{asset('frontend')}}/images/our-project-48.jpg" class="card-img-top rounded-0"--}}
+{{--                                     alt="card image">--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                        <a href="javascript:void(0)" class="col our-gallery-single-card ">--}}
+{{--                            <div class="card border-0 rounded-0 h-100 shadow-lg">--}}
+{{--                                <img src="{{asset('frontend')}}/images/footer-image-1st.jpg" class="card-img-top rounded-0"--}}
+{{--                                     alt="card image">--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                        <a href="javascript:void(0)" class="col our-gallery-single-card">--}}
+{{--                            <div class="card border-0 rounded-0 h-100 shadow-lg">--}}
+{{--                                <img src="{{asset('frontend')}}/images/our-project-2.jpg" class="card-img-top rounded-0"--}}
+{{--                                     alt="card image">--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                        <a href="javascript:void(0)" class="col our-gallery-single-card">--}}
+{{--                            <div class="card border-0 rounded-0 h-100 shadow-lg">--}}
+{{--                                <img src="{{asset('frontend')}}/images/our-project-48.jpg" class="card-img-top rounded-0"--}}
+{{--                                     alt="card image">--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                        <a href="javascript:void(0)" class="col our-gallery-single-card ">--}}
+{{--                            <div class="card border-0 rounded-0 h-100 shadow-lg">--}}
+{{--                                <img src="{{asset('frontend')}}/images/footer-image-1st.jpg" class="card-img-top rounded-0"--}}
+{{--                                     alt="card image">--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                        <a href="javascript:void(0)" class="col our-gallery-single-card">--}}
+{{--                            <div class="card border-0 rounded-0 h-100 shadow-lg">--}}
+{{--                                <img src="{{asset('frontend')}}/images/our-project-2.jpg" class="card-img-top rounded-0"--}}
+{{--                                     alt="card image">--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div id="Twieen" class="tabcontent">--}}
+{{--                    <div class=" row row-cols-2 row-cols-md-3 g-4 photo-album">--}}
+
+{{--                        <a href="javascript:void(0)" class="col our-gallery-single-card ">--}}
+{{--                            <div class="card border-0 rounded-0 h-100 shadow-lg">--}}
+{{--                                <img src="{{asset('frontend')}}/images/footer-image-1st.jpg" class="card-img-top rounded-0"--}}
+{{--                                     alt="card image">--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                        <a href="javascript:void(0)" class="col our-gallery-single-card">--}}
+{{--                            <div class="card border-0 rounded-0 h-100 shadow-lg">--}}
+{{--                                <img src="{{asset('frontend')}}/images/our-project-48.jpg" class="card-img-top rounded-0"--}}
+{{--                                     alt="card image">--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                        <a href="javascript:void(0)" class="col our-gallery-single-card">--}}
+{{--                            <div class="card border-0 rounded-0 h-100 shadow-lg">--}}
+{{--                                <img src="{{asset('frontend')}}/images/our-project-48.jpg" class="card-img-top rounded-0"--}}
+{{--                                     alt="card image">--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                        <a href="javascript:void(0)" class="col our-gallery-single-card">--}}
+{{--                            <div class="card border-0 rounded-0 h-100 shadow-lg">--}}
+{{--                                <img src="{{asset('frontend')}}/images/our-project-2.jpg" class="card-img-top rounded-0"--}}
+{{--                                     alt="card image">--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                        <a href="javascript:void(0)" class="col our-gallery-single-card ">--}}
+{{--                            <div class="card border-0 rounded-0 h-100 shadow-lg">--}}
+{{--                                <img src="{{asset('frontend')}}/images/footer-image-1st.jpg" class="card-img-top rounded-0"--}}
+{{--                                     alt="card image">--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                        <a href="javascript:void(0)" class="col our-gallery-single-card">--}}
+{{--                            <div class="card border-0 rounded-0 h-100 shadow-lg">--}}
+{{--                                <img src="{{asset('frontend')}}/images/our-project-2.jpg" class="card-img-top rounded-0"--}}
+{{--                                     alt="card image">--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div id="Couple" class="tabcontent">--}}
+{{--                    <div class=" row row-cols-2 row-cols-md-3 g-4 photo-album">--}}
+{{--                        <a href="javascript:void(0)" class="col our-gallery-single-card">--}}
+{{--                            <div class="card border-0 rounded-0 h-100 shadow-lg">--}}
+{{--                                <img src="{{asset('frontend')}}/images/our-project-48.jpg" class="card-img-top rounded-0"--}}
+{{--                                     alt="card image">--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                        <a href="javascript:void(0)" class="col our-gallery-single-card ">--}}
+{{--                            <div class="card border-0 rounded-0 h-100 shadow-lg">--}}
+{{--                                <img src="{{asset('frontend')}}/images/footer-image-1st.jpg" class="card-img-top rounded-0"--}}
+{{--                                     alt="card image">--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                        <a href="javascript:void(0)" class="col our-gallery-single-card">--}}
+{{--                            <div class="card border-0 rounded-0 h-100 shadow-lg">--}}
+{{--                                <img src="{{asset('frontend')}}/images/our-project-2.jpg" class="card-img-top rounded-0"--}}
+{{--                                     alt="card image">--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                        <a href="javascript:void(0)" class="col our-gallery-single-card">--}}
+{{--                            <div class="card border-0 rounded-0 h-100 shadow-lg">--}}
+{{--                                <img src="{{asset('frontend')}}/images/our-project-48.jpg" class="card-img-top rounded-0"--}}
+{{--                                     alt="card image">--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                        <a href="javascript:void(0)" class="col our-gallery-single-card ">--}}
+{{--                            <div class="card border-0 rounded-0 h-100 shadow-lg">--}}
+{{--                                <img src="{{asset('frontend')}}/images/footer-image-1st.jpg" class="card-img-top rounded-0"--}}
+{{--                                     alt="card image">--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                        <a href="javascript:void(0)" class="col our-gallery-single-card">--}}
+{{--                            <div class="card border-0 rounded-0 h-100 shadow-lg">--}}
+{{--                                <img src="{{asset('frontend')}}/images/our-project-2.jpg" class="card-img-top rounded-0"--}}
+{{--                                     alt="card image">--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div id="Family" class="tabcontent">--}}
+{{--                    <div class=" row row-cols-2 row-cols-md-3 g-4 photo-album">--}}
+{{--                        <a href="javascript:void(0)" class="col our-gallery-single-card">--}}
+{{--                            <div class="card border-0 rounded-0 h-100 shadow-lg">--}}
+{{--                                <img src="{{asset('frontend')}}/images/our-project-2.jpg" class="card-img-top rounded-0"--}}
+{{--                                     alt="card image">--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                        <a href="javascript:void(0)" class="col our-gallery-single-card">--}}
+{{--                            <div class="card border-0 rounded-0 h-100 shadow-lg">--}}
+{{--                                <img src="{{asset('frontend')}}/images/our-project-48.jpg" class="card-img-top rounded-0"--}}
+{{--                                     alt="card image">--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                        <a href="javascript:void(0)" class="col our-gallery-single-card ">--}}
+{{--                            <div class="card border-0 rounded-0 h-100 shadow-lg">--}}
+{{--                                <img src="{{asset('frontend')}}/images/footer-image-1st.jpg" class="card-img-top rounded-0"--}}
+{{--                                     alt="card image">--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                        <a href="javascript:void(0)" class="col our-gallery-single-card">--}}
+{{--                            <div class="card border-0 rounded-0 h-100 shadow-lg">--}}
+{{--                                <img src="{{asset('frontend')}}/images/our-project-2.jpg" class="card-img-top rounded-0"--}}
+{{--                                     alt="card image">--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                        <a href="javascript:void(0)" class="col our-gallery-single-card">--}}
+{{--                            <div class="card border-0 rounded-0 h-100 shadow-lg">--}}
+{{--                                <img src="{{asset('frontend')}}/images/our-project-48.jpg" class="card-img-top rounded-0"--}}
+{{--                                     alt="card image">--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                        <a href="javascript:void(0)" class="col our-gallery-single-card ">--}}
+{{--                            <div class="card border-0 rounded-0 h-100 shadow-lg">--}}
+{{--                                <img src="{{asset('frontend')}}/images/footer-image-1st.jpg" class="card-img-top rounded-0"--}}
+{{--                                     alt="card image">--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div id="Conference" class="tabcontent">--}}
+{{--                    <div class=" row row-cols-2 row-cols-md-3 g-4 photo-album">--}}
+{{--                        <a href="javascript:void(0)" class="col our-gallery-single-card">--}}
+{{--                            <div class="card border-0 rounded-0 h-100 shadow-lg">--}}
+{{--                                <img src="{{asset('frontend')}}/images/our-project-48.jpg" class="card-img-top rounded-0"--}}
+{{--                                     alt="card image">--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                        <a href="javascript:void(0)" class="col our-gallery-single-card ">--}}
+{{--                            <div class="card border-0 rounded-0 h-100 shadow-lg">--}}
+{{--                                <img src="{{asset('frontend')}}/images/footer-image-1st.jpg" class="card-img-top rounded-0"--}}
+{{--                                     alt="card image">--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                        <a href="javascript:void(0)" class="col our-gallery-single-card">--}}
+{{--                            <div class="card border-0 rounded-0 h-100 shadow-lg">--}}
+{{--                                <img src="{{asset('frontend')}}/images/our-project-2.jpg" class="card-img-top rounded-0"--}}
+{{--                                     alt="card image">--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                        <a href="javascript:void(0)" class="col our-gallery-single-card">--}}
+{{--                            <div class="card border-0 rounded-0 h-100 shadow-lg">--}}
+{{--                                <img src="{{asset('frontend')}}/images/our-project-48.jpg" class="card-img-top rounded-0"--}}
+{{--                                     alt="card image">--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                        <a href="javascript:void(0)" class="col our-gallery-single-card ">--}}
+{{--                            <div class="card border-0 rounded-0 h-100 shadow-lg">--}}
+{{--                                <img src="{{asset('frontend')}}/images/footer-image-1st.jpg" class="card-img-top rounded-0"--}}
+{{--                                     alt="card image">--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                        <a href="javascript:void(0)" class="col our-gallery-single-card">--}}
+{{--                            <div class="card border-0 rounded-0 h-100 shadow-lg">--}}
+{{--                                <img src="{{asset('frontend')}}/images/our-project-2.jpg" class="card-img-top rounded-0"--}}
+{{--                                     alt="card image">--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+
+{{--                <nav class="custome-pagination" aria-label="Page navigation example">--}}
+{{--                    <ul class="pagination justify-content-center pt-5 custome-pagination-list">--}}
+{{--                        <li class="page-item custom-page-item">--}}
+{{--                            <a class="page-link pagination-item  rounded-pill" href="#" aria-label="Previous">--}}
+{{--                                <span aria-hidden="true">&laquo;</span>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        <li class="page-item custom-page-item"><a class="page-link pagination-item rounded-pill"--}}
+{{--                                                                  href="#">1</a>--}}
+{{--                        </li>--}}
+{{--                        <li class="page-item"><a class="page-link pagination-item rounded-pill" href="#">2</a>--}}
+{{--                        </li>--}}
+{{--                        <li class="page-item"><a class="page-link  pagination-item rounded-pill" href="#">3</a>--}}
+{{--                        </li>--}}
+{{--                        <li class="page-item">--}}
+{{--                            <a class="page-link rounded-pill pagination-item" href="#" aria-label="Next">--}}
+{{--                                <span aria-hidden="true">&raquo;</span>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                    </ul>--}}
+{{--                </nav>--}}
             </div>
+            </div>
+        </section>
+        <section class="pagination-section">
+            <div class="pagination-section-1st-div"></div>
+            <div>
 
+                @if($myGallery->hasPages())
+                    {{$myGallery->links()}}
+                @endif
+            </div>
         </section>
         <!-- room grid card end -->
         <!-- hotel-logo-collection start -->

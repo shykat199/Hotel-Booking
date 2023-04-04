@@ -6,42 +6,46 @@
                 <li>
                         <span>
                             <i class="fa fa-map-marker text-warning pe-1" aria-hidden="true"></i>
-                            205 Main Road, New York
+                            {{getAddressLink()}}
                         </span>
                 </li>
                 <li class="ps-4">
                         <span>
                             <i class="fa fa-phone text-warning pe-1" aria-hidden="true"></i>
-                            +89 (456) 789 999
+                            {{getPhoneLink()}}
                         </span>
                 </li>
 
             </ul>
             <div class="d-flex align-items-center nav-upper-right-sight-link">
-                <a href="javascript:void(0)" class="">About us</a>
-                <a href="javascript:void(0)" class="ps-3">Services</a>
-                <a href="javascript:void(0)" class="ps-3">Privacy</a>
+                <a href="{{route('frontend.about.us.showPage')}}" class="">About us</a>
+                <a href="{{route('frontend.our-service.page')}}" class="ps-3">Services</a>
+{{--                @foreach(ourService() as $name)--}}
+{{--                    <li><a class="dropdown-item" href="">{{$name->title}}</a></li>--}}
+{{--                @endforeach--}}
+{{--                <a href="javascript:void(0)" class="ps-3">Privacy</a>--}}
                 <ul class="ms-5 d-flex nav-upper-social-icon align-items-center">
-                    <li class="pe-2">
-                        <a href="javascript:void(0)">
-                            <i class="fa fa-facebook"></i>
-                        </a>
-                    </li>
-                    <li class="px-2">
-                        <a href="javascript:void(0)">
-                            <i class="fa fa-twitter"></i>
-                        </a>
-                    </li>
-                    <li class="px-2">
-                        <a href="javascript:void(0)">
-                            <i class="fa fa-instagram"></i>
-                        </a>
-                    </li>
-                    <li class="px-2">
-                        <a href="javascript:void(0)">
-                            <i class="fa fa-google"></i>
-                        </a>
-                    </li>
+
+                        <li class="pe-2">
+                            <a href="{{getFacebookLink()}}">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li class="px-2">
+                            <a href="{{getTwitterLink()}}">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="px-2">
+                            <a href="{{getInstagramLink()}}">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li class="px-2">
+                            <a href="{{getEmailLink()}}">
+                                <i class="fa fa-google"></i>
+                            </a>
+                        </li>
                 </ul>
             </div>
             <!-- </div> -->
@@ -60,20 +64,20 @@
             </button>
             <div class="collapse navbar-collapse hotel-booking-nav2-text-design" id="navbarSupportedContent">
                 <ul class="d-flex pe-5 ps-5">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                           aria-expanded="false">
-                            Enlish
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
+{{--                    <li class="nav-item dropdown">--}}
+{{--                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"--}}
+{{--                           aria-expanded="false">--}}
+{{--                            Enlish--}}
+{{--                        </a>--}}
+{{--                        <ul class="dropdown-menu">--}}
+{{--                            <li><a class="dropdown-item" href="#">Action</a></li>--}}
+{{--                            <li><a class="dropdown-item" href="#">Another action</a></li>--}}
+{{--                            <li>--}}
+{{--                                <hr class="dropdown-divider">--}}
+{{--                            </li>--}}
+{{--                            <li><a class="dropdown-item" href="#">Something else here</a></li>--}}
+{{--                        </ul>--}}
+{{--                    </li>--}}
                 </ul>
                 <ul class="navbar-nav mx-auto  mb-2 mb-lg-0">
                     <li class="nav-item dropdown pe-1">
@@ -122,57 +126,84 @@
                     <li class="nav-item dropdown pe-1">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                            aria-expanded="false">
-                            NEWS
+                            Blog
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item text-dark" href="{{route('blog.list')}}">Blog List</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item dropdown pe-1">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                           aria-expanded="false">
-                            GALLERY
+                    <li lass="nav-item dropdown pe-1">
+                        <a class="nav-link active" href="{{route('frontend.room.grid.page')}}" >
+                            Room Grid
                         </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
                     </li>
-                    <li class="nav-item pe-1">
-                        <a class="nav-link" href="#">CONTACT</a>
+                    <li lass="nav-item dropdown pe-1">
+{{--                        <a class="nav-link active" href="{{route('user.dashboard.page')}}" >--}}
+{{--                            User Dashboard--}}
+{{--                        </a>--}}
                     </li>
-                    <li class="nav-item dropdown pe-1">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                           aria-expanded="false">
-                            PAGES
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item pe-1">
-                        <a class="nav-link" href="#"><i class="fa fa-search"></i></a>
-                    </li>
+
+
+
+{{--                    <li class="nav-item dropdown pe-1">--}}
+{{--                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"--}}
+{{--                           aria-expanded="false">--}}
+{{--                            GALLERY--}}
+{{--                        </a>--}}
+{{--                        <ul class="dropdown-menu">--}}
+{{--                            <li><a class="dropdown-item" href="#">Action</a></li>--}}
+{{--                            <li><a class="dropdown-item" href="#">Another action</a></li>--}}
+{{--                            <li>--}}
+{{--                                <hr class="dropdown-divider">--}}
+{{--                            </li>--}}
+{{--                            <li><a class="dropdown-item" href="#">Something else here</a></li>--}}
+{{--                        </ul>--}}
+{{--                    </li>--}}
+{{--                    <li class="nav-item pe-1">--}}
+{{--                        <a class="nav-link" href="#">CONTACT</a>--}}
+{{--                    </li>--}}
+{{--                    <li class="nav-item dropdown pe-1">--}}
+{{--                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"--}}
+{{--                           aria-expanded="false">--}}
+{{--                            PAGES--}}
+{{--                        </a>--}}
+{{--                        <ul class="dropdown-menu">--}}
+{{--                            <li><a class="dropdown-item" href="#">Action</a></li>--}}
+{{--                            <li><a class="dropdown-item" href="#">Another action</a></li>--}}
+{{--                            <li>--}}
+{{--                                <hr class="dropdown-divider">--}}
+{{--                            </li>--}}
+{{--                            <li><a class="dropdown-item" href="#">Something else here</a></li>--}}
+{{--                        </ul>--}}
+{{--                    </li>--}}
+{{--                    <li class="nav-item pe-1">--}}
+{{--                        <a class="nav-link" href="#"><i class="fa fa-search"></i></a>--}}
+{{--                    </li>--}}
                 </ul>
                 <ul class="d-flex get-a-quote-btn">
-                    <button type="button" class="btn btn-warning text-light rounded-0 rol py-4 px-3">GET A QU0TE
-                        <span class="ps-1"><i class="fa fa-long-arrow-right"></i>
+
+
+                    @if(\Illuminate\Support\Facades\Auth::user())
+                        @if(\Illuminate\Support\Facades\Auth::user()->roll=='1')
+                            <a href="{{route('admin.dashboard.file')}}" type="button" class="btn btn-warning text-light rounded-0 rol py-4 px-3">Go to Dashboard
+                                <span class="ps-1"><i class="fa fa-long-arrow-right"></i>
                             </span>
-                    </button>
+                            </a>
+                        @else
+                            <a href="{{route('user.dashboard.page')}}" type="button" class="btn btn-warning text-light rounded-0 rol py-4 px-3">Go to Dashboard
+                                <span class="ps-1"><i class="fa fa-long-arrow-right"></i>
+                            </span>
+                            </a>
+                        @endif
+                    @else
+                        <a href="{{route('main.login.page')}}" type="button" class="btn btn-warning text-light rounded-0 rol py-4 px-3">Sign In
+                            <span class="ps-1"><i class="fa fa-long-arrow-right"></i>
+                            </span>
+                        </a>
+                    @endif
                 </ul>
             </div>
 

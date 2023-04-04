@@ -1,8 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\frontend;
+namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\CompanyMission;
+use App\Models\Feedback;
+use App\Models\Services;
 use Illuminate\Http\Request;
 
 class FrontendAboutusController extends Controller
@@ -13,7 +16,11 @@ class FrontendAboutusController extends Controller
 
     public function about_us()
     {
-        return view('frontend.about_us');
+        $aboutUs =getSettingsData('aboutUs');
+        $companyMission=CompanyMission::all();
+        $services =Services::all();
+        $feedback=Feedback::all();
+        return view('frontend.about_us',compact('aboutUs','companyMission','services','feedback'));
     }
     public function index()
     {

@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\frontend;
+namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Pricing;
 use App\Models\Rooms;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class FrontendRoomGridController extends Controller
 {
@@ -13,59 +15,14 @@ class FrontendRoomGridController extends Controller
      */
 
     public  function roomGrid(){
-        $roomGrid = Rooms::all();
-        return view('frontend.room_grid_page',compact('roomGrid'));
-    }
-    public function index()
-    {
-        //
-    }
+        $roomGrid = Rooms::select('rooms.*','pricing.nightly')
+                    ->Join('rooms','rooms.id','pricing.room_id')->get();
+        dd($roomGrid);
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+//        $roomGrid=DB::table('rooms')->paginate(3);
+//        $rooms = Rooms::find($id);
+//        $pricing = Pricing::where('room_id',$id)->first();
+//        $gallery = DB::table('galleries')->paginate(2);
+        return view('frontend.room_grid_page',compact('roomGrid',));
     }
 }

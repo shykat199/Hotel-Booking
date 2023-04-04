@@ -1,9 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\frontend;
+namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Gallery;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class FrontendOurGalleryController extends Controller
 {
@@ -13,7 +15,8 @@ class FrontendOurGalleryController extends Controller
 
     public function ourGalley()
     {
-        return view('frontend.our_gallery');
+        $myGallery =DB::table('galleries')->paginate(2);
+        return view('frontend.our_gallery',compact('myGallery'));
     }
     public function index()
     {

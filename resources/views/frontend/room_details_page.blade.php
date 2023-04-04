@@ -1,5 +1,5 @@
 @extends('frontend.master_header_footer.frontend_masterpage')
-@section('room-details')
+@section('frontend')
 
     @if(\Illuminate\Support\Facades\Session::has('success'))
         <div class="alert alert-success">
@@ -219,8 +219,6 @@
                                     </a>
                                 </div>
                             @endforeach
-
-
                         </div>
 
                     </div>
@@ -228,16 +226,15 @@
                         <img class="img-fluid" src="{{asset('frontend')}}/images/our-project-1.jpg" alt="Category image">
                         <div class="room-full-details-content-right-last-part-text-content">
                             <h3>
-                                Booking Your Latest Appertment
+                                Booking Your Latest Apartment.
                             </h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, velit numquam iure
-                                deleniti nihil perspiciatis.
+                            <p>Largest online hotel booking service in Bangladesh, Big savings on hotels in bangladesh and destinations around the worldwide, Find the guaranteed best.
                             </p>
                             <div class="">
-                                <button type="submit" class="btn btn-warning text-light fw-semibold rounded-1 ">Book
+                                <a href="{{route('frontend.room.grid.page')}}" type="submit" class="btn btn-warning text-light fw-semibold rounded-1 ">Book
                                     Now
                                     <i class="fa fa-long-arrow-right"></i>
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -255,100 +252,138 @@
             <!-- room details card start -->
             <div class="room-grid-card my-5">
                 <div class="py-5 latest-product-testimonial-slider-content-right">
+
                     <div class="row row-cols-2 row-cols-md-3 g-4">
-                        <a href="javascript:void(0)" class="col latest-product-single-card ">
-                            <div class="card border-0  shadow-lg">
-                                <img src="./assets/images/footer-image-1st.jpg" class="card-img-top"
-                                     alt="card image">
-                                <div class="card-body pb-5">
-                                    <button type="button"
-                                            class="btn btn-warning latest-product-single-card-upper-button">Guest
-                                        House</button>
-                                    <h5 class="card-title">Modern Guest Rooms</h5>
-                                    <p class="card-text">This is a longer card with supporting text
-                                        below as a natural lead-in to
-                                        additional content. This content is a little bit longer.</p>
-                                    <ul class="d-flex latest-product-single-card-icon">
-                                        <li>
-                                            <i class="fa fa-bed" aria-hidden="true"></i>
-                                            3 Bed
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-bath" aria-hidden="true"></i>
-                                            2 Baths
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-bath" aria-hidden="true"></i>
-                                            2 Baths
-                                        </li>
-                                    </ul>
-                                    <button type="button"
-                                            class="btn btn-warning mt-3 latest-product-single-card-lower-button">$180.00</button>
+
+                        @foreach($roomGrid as $item)
+                            <a href="{{route('frontend.room.details.page',$item->id)}}" class="col latest-product-single-card ">
+
+                                <div class="card border-0  shadow-lg">
+                                    <img src="{{asset('storage/room-images/'.$item->image)}}" class="card-img-top" alt="card image">
+                                    <div class="card-body pb-5">
+                                        <button type="button"
+                                                class="btn btn-warning latest-product-single-card-upper-button">Guest
+                                            House</button>
+                                        <h5 class="card-title">{{$item->title}}</h5>
+                                        <p class="card-text">{{$item->description}}</p>
+                                        <ul class="d-flex latest-product-single-card-icon">
+                                            <li>
+                                                <i class="fa fa-bed" aria-hidden="true"></i>
+                                                {{$item->beds}}
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-bath" aria-hidden="true"></i>
+                                                {{$item->baths}}
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-bath" aria-hidden="true"></i>
+                                                {{$item->room_size}}
+                                            </li>
+                                        </ul>
+
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                        <a href="javascript:void(0)" class="col latest-product-single-card">
-                            <div class="card border-0 h-100 shadow-lg">
-                                <img src="./assets/images/our-project-2.jpg" class="card-img-top" alt="card image">
-                                <div class="card-body pb-5">
-                                    <button type="button"
-                                            class="btn btn-warning latest-product-single-card-upper-button">Meeting
-                                        Room</button>
-                                    <h5 class="card-title">Conference Room</h5>
-                                    <p class="card-text">This is a longer card with supporting text
-                                        below as a natural lead-in to
-                                        additional content. This content is a little bit longer.</p>
-                                    <ul class="d-flex latest-product-single-card-icon">
-                                        <li>
-                                            <i class="fa fa-bed" aria-hidden="true"></i>
-                                            3 Bed
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-bath" aria-hidden="true"></i>
-                                            2 Baths
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-bath" aria-hidden="true"></i>
-                                            2 Baths
-                                        </li>
-                                    </ul>
-                                    <button type="button"
-                                            class="btn btn-warning mt-3 latest-product-single-card-lower-button">$205.00</button>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="javascript:void(0)" class="col latest-product-single-card">
-                            <div class="card border-0 h-100 shadow-lg">
-                                <img src="./assets/images/our-project-48.jpg" class="card-img-top" alt="card image">
-                                <div class="card-body pb-5">
-                                    <button type="button"
-                                            class="btn btn-warning latest-product-single-card-upper-button">Guest
-                                        House</button>
-                                    <h5 class="card-title">Deluxe Couple Room</h5>
-                                    <p class="card-text">This is a longer card with supporting text
-                                        below as a natural lead-in to
-                                        additional content. This content is a little bit longer.</p>
-                                    <ul class="d-flex latest-product-single-card-icon">
-                                        <li>
-                                            <i class="fa fa-bed" aria-hidden="true"></i>
-                                            3 Bed
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-bath" aria-hidden="true"></i>
-                                            2 Baths
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-bath" aria-hidden="true"></i>
-                                            2 Baths
-                                        </li>
-                                    </ul>
-                                    <button type="button"
-                                            class="btn btn-warning mt-3 latest-product-single-card-lower-button">$199.00</button>
-                                </div>
-                            </div>
-                        </a>
+
+                            </a>
+                        @endforeach
 
                     </div>
+
+
+{{--                    <div class="row row-cols-2 row-cols-md-3 g-4">--}}
+{{--                        <a href="javascript:void(0)" class="col latest-product-single-card ">--}}
+{{--                            <div class="card border-0  shadow-lg">--}}
+{{--                                <img src="./assets/images/footer-image-1st.jpg" class="card-img-top"--}}
+{{--                                     alt="card image">--}}
+{{--                                <div class="card-body pb-5">--}}
+{{--                                    <button type="button"--}}
+{{--                                            class="btn btn-warning latest-product-single-card-upper-button">Guest--}}
+{{--                                        House</button>--}}
+{{--                                    <h5 class="card-title">Modern Guest Rooms</h5>--}}
+{{--                                    <p class="card-text">This is a longer card with supporting text--}}
+{{--                                        below as a natural lead-in to--}}
+{{--                                        additional content. This content is a little bit longer.</p>--}}
+{{--                                    <ul class="d-flex latest-product-single-card-icon">--}}
+{{--                                        <li>--}}
+{{--                                            <i class="fa fa-bed" aria-hidden="true"></i>--}}
+{{--                                            3 Bed--}}
+{{--                                        </li>--}}
+{{--                                        <li>--}}
+{{--                                            <i class="fa fa-bath" aria-hidden="true"></i>--}}
+{{--                                            2 Baths--}}
+{{--                                        </li>--}}
+{{--                                        <li>--}}
+{{--                                            <i class="fa fa-bath" aria-hidden="true"></i>--}}
+{{--                                            2 Baths--}}
+{{--                                        </li>--}}
+{{--                                    </ul>--}}
+{{--                                    <button type="button"--}}
+{{--                                            class="btn btn-warning mt-3 latest-product-single-card-lower-button">$180.00</button>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                        <a href="javascript:void(0)" class="col latest-product-single-card">--}}
+{{--                            <div class="card border-0 h-100 shadow-lg">--}}
+{{--                                <img src="./assets/images/our-project-2.jpg" class="card-img-top" alt="card image">--}}
+{{--                                <div class="card-body pb-5">--}}
+{{--                                    <button type="button"--}}
+{{--                                            class="btn btn-warning latest-product-single-card-upper-button">Meeting--}}
+{{--                                        Room</button>--}}
+{{--                                    <h5 class="card-title">Conference Room</h5>--}}
+{{--                                    <p class="card-text">This is a longer card with supporting text--}}
+{{--                                        below as a natural lead-in to--}}
+{{--                                        additional content. This content is a little bit longer.</p>--}}
+{{--                                    <ul class="d-flex latest-product-single-card-icon">--}}
+{{--                                        <li>--}}
+{{--                                            <i class="fa fa-bed" aria-hidden="true"></i>--}}
+{{--                                            3 Bed--}}
+{{--                                        </li>--}}
+{{--                                        <li>--}}
+{{--                                            <i class="fa fa-bath" aria-hidden="true"></i>--}}
+{{--                                            2 Baths--}}
+{{--                                        </li>--}}
+{{--                                        <li>--}}
+{{--                                            <i class="fa fa-bath" aria-hidden="true"></i>--}}
+{{--                                            2 Baths--}}
+{{--                                        </li>--}}
+{{--                                    </ul>--}}
+{{--                                    <button type="button"--}}
+{{--                                            class="btn btn-warning mt-3 latest-product-single-card-lower-button">$205.00</button>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                        <a href="javascript:void(0)" class="col latest-product-single-card">--}}
+{{--                            <div class="card border-0 h-100 shadow-lg">--}}
+{{--                                <img src="./assets/images/our-project-48.jpg" class="card-img-top" alt="card image">--}}
+{{--                                <div class="card-body pb-5">--}}
+{{--                                    <button type="button"--}}
+{{--                                            class="btn btn-warning latest-product-single-card-upper-button">Guest--}}
+{{--                                        House</button>--}}
+{{--                                    <h5 class="card-title">Deluxe Couple Room</h5>--}}
+{{--                                    <p class="card-text">This is a longer card with supporting text--}}
+{{--                                        below as a natural lead-in to--}}
+{{--                                        additional content. This content is a little bit longer.</p>--}}
+{{--                                    <ul class="d-flex latest-product-single-card-icon">--}}
+{{--                                        <li>--}}
+{{--                                            <i class="fa fa-bed" aria-hidden="true"></i>--}}
+{{--                                            3 Bed--}}
+{{--                                        </li>--}}
+{{--                                        <li>--}}
+{{--                                            <i class="fa fa-bath" aria-hidden="true"></i>--}}
+{{--                                            2 Baths--}}
+{{--                                        </li>--}}
+{{--                                        <li>--}}
+{{--                                            <i class="fa fa-bath" aria-hidden="true"></i>--}}
+{{--                                            2 Baths--}}
+{{--                                        </li>--}}
+{{--                                    </ul>--}}
+{{--                                    <button type="button"--}}
+{{--                                            class="btn btn-warning mt-3 latest-product-single-card-lower-button">$199.00</button>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+
+{{--                    </div>--}}
                 </div>
 
             </div>

@@ -3,8 +3,12 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\About;
+use App\Models\Gallery;
 use App\Models\Services;
+use App\Models\Sliders;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class FrontendIndexController extends Controller
 {
@@ -18,47 +22,17 @@ class FrontendIndexController extends Controller
     public function index()
     {
         $ourService = Services::all();
-        return view('frontend.index_page',compact('ourService'));
+        $sliders = Sliders::all();
+        $aboutUs=About::all();
+        $gallery = Gallery::limit(5)->orderBy('id', 'DESC')->get()->toArray();
+//        dd($gallery[1]);
+
+//        $gallery = DB::table('galleries')->paginate(2);
+        return view('frontend.index_page',compact('ourService','sliders','aboutUs','gallery'));
     }
 
 
 
 
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
 
 }

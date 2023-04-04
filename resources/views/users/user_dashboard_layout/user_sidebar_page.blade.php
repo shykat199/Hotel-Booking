@@ -46,6 +46,10 @@
                         <li>
                             <a href="{{route('user-login.user-login-details')}}">Booked Room List</a>
                         </li>
+                        <li>
+                            <a href="{{route('frontend.index.page')}}">Home Page</a>
+                        </li>
+
 
                     </ul>
                 </div>

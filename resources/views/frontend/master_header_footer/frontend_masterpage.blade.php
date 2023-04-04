@@ -21,7 +21,7 @@
 @yield('our_gallery')
 @yield('our-service')
 @yield('our-staff')
-@yield('room-details')
+@yield('frontend')
 @yield('room-grid')
 
 

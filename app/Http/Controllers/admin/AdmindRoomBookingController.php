@@ -21,6 +21,7 @@ class AdmindRoomBookingController extends Controller
 //return $userRoom;
        // $allRoom=RoomBooking::with('rooms')->get();
         //dd($allRoom);
+
         return view('admin.roomBooking.admin_room_booking_page',compact('adminRoomBooking'));
     }
 }

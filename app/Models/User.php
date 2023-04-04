@@ -22,6 +22,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    protected $table = 'users';
+
     public function roomBooking(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(RoomBooking::class,'user_id');

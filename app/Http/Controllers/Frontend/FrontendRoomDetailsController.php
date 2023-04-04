@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\frontend;
+namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Categorie;
@@ -37,56 +37,8 @@ class FrontendRoomDetailsController extends Controller
             ->join('features', 'room_features.features_id', '=', 'features.id')
             ->get();
 //        dd($allFeatures);
+        $roomGrid = Rooms::limit(3)->orderBy('id','DESC')->get();
 
-        return view('frontend.room_details_page',compact('roomCategory','rooms','pricing','allFacilities','allFeatures','roomList'));
-    }
-
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        return view('frontend.room_details_page',compact('roomCategory','rooms','pricing','allFacilities','allFeatures','roomList','roomGrid'));
     }
 }

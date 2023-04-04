@@ -56,40 +56,25 @@
                                         </li>
                                     </ul>
                                     <button type="button"
-                                            class="btn btn-warning mt-3 latest-product-single-card-lower-button">$180.00</button>
+                                            class="btn btn-warning mt-3 latest-product-single-card-lower-button">{{$item->nightly}}</button>
                                 </div>
                                 </div>
-
                             </a>
                                 @endforeach
-
                     </div>
+{{--                <section class="pagination-section">--}}
+{{--                    <div class="pagination-section-1st-div"></div>--}}
+{{--                    <div>--}}
 
+{{--                        @if($roomGrid->hasPages())--}}
+{{--                            {{$roomGrid->links()}}--}}
+{{--                        @endif--}}
 
-
-
-                <nav class="custome-pagination" aria-label="Page navigation example">
-                    <ul class="pagination justify-content-center pt-5 custome-pagination-list">
-                        <li class="page-item custom-page-item mx-3">
-                            <a class="page-link pagination-item  rounded-pill" href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                            </a>
-                        </li>
-                        <li class="page-item custom-page-item mx-3 "><a class="page-link pagination-item rounded-pill"
-                                                                        href="#">1</a>
-                        </li>
-                        <li class="page-item mx-3"><a class="page-link pagination-item rounded-pill" href="#">2</a>
-                        </li>
-                        <li class="page-item mx-3"><a class="page-link  pagination-item rounded-pill" href="#">3</a>
-                        </li>
-                        <li class="page-item mx-3">
-                            <a class="page-link rounded-pill pagination-item" href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+{{--                    </div>--}}
+{{--                </section>--}}
             </div>
+
+
 
         </section>
         <!-- room grid card end -->

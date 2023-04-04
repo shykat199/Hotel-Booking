@@ -37,11 +37,7 @@
                         </h2>
                     </div>
                     <div class="col-7 donot-hesitate-right-part">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum voluptatibus minus neque
-                            dignissimos nesciunt molestiae nobis, molestias labore deserunt a eligendi laboriosam
-                            corporis, ab et eius! Commodi quo incidunt animi nisi minima sequi explicabo iste nam
-                            mollitia, magnam assumenda. Sint aliquid deleniti modi obcaecati tempore incidunt impedit
-                            pariatur deserunt maiores!</p>
+                        <p>{{$aboutUs['aboutUs']}}</p>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id aperiam similique, deserunt
                             alias voluptate nisi molestias totam assumenda quis sequi.</p>
                     </div>
@@ -135,25 +131,14 @@
                 <p class="text-warning small fw-semibold text-center">Latest Product</p>
                 <h2 class="text-light text-center fw-bold">Modern Hotel & Room For <br> Luxury Living</h2>
                 <div class="row row-cols-3 row-cols-md-3 g-4">
-                    <div class="col">
-                        <div class="card h-100 border-0 rounded-0">
-                            <img src="{{asset('frontend')}}/images/home-about-us2.jpg" class="card-img-top rounded-0"
-                                 alt="card image">
+                    @foreach($companyMission as $item)
+                         <div class="col">
+                            <div class="card h-100 border-0 rounded-0">
+                                <img src="{{asset('storage/company_mission-images/'.$item->image)}}" class="card-img-top rounded-0"
+                                     alt="card image">
+                            </div>
                         </div>
-                    </div>
-                    <div class="col">
-                        <div class="card h-100 border-0 rounded-0">
-                            <img src="{{asset('frontend')}}/images/top-summer-detination.jpg"
-                                 class="card-img-top rounded-0"
-                                 alt="card image">
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card h-100 border-0 rounded-0">
-                            <img src="{{asset('frontend')}}/images/our-project-5.jpg" class="card-img-top rounded-0"
-                                 alt="card image">
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
 
@@ -161,46 +146,19 @@
         <section class="about-us-latest-product-bottom">
             <div class="container">
                 <div class="row row-cols-3 row-cols-md-3 g-4">
-                    <div class="col">
-                        <div class="card h-100 border-0">
-                            <div class="">
-                                <h5 class="fw-bold py-4">Company Mission</h5>
-                                <p class="small pb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
-                                    dolore
-                                    optio dolorem eaque impedit blanditiis iste quae voluptatum, exercitationem ut.</p>
-                                <a href="#" class=" text-dark fw-semibold ">READ MORE
-                                    <i class="fa fa-long-arrow-right"></i>
-                                </a>
+                    @foreach($companyMission as $item)
+                        <div class="col">
+                            <div class="card h-100 border-0">
+                                 <div class="">
+                                    <h5 class="fw-bold py-4">{{$item->title}}</h5>
+                                    <p class="small pb-4">{{$item->description}}</p>
+                                    <a href="#" class=" text-dark fw-semibold ">READ MORE
+                                        <i class="fa fa-long-arrow-right"></i>
+                                     </a>
+                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col">
-                        <div class="card h-100 border-0">
-                            <div class="">
-                                <h5 class="fw-bold py-4">Company History</h5>
-                                <p class="small pb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur
-                                    quae
-                                    quos molestias deleniti molestiae asperiores sint minus aliquam quas magnam.</p>
-                                <a href="#" class=" text-dark fw-semibold ">READ MORE
-                                    <i class="fa fa-long-arrow-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card h-100 border-0">
-                            <div class="">
-                                <h5 class="fw-bold py-4">What We Do?</h5>
-                                <p class="small pb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas,
-                                    perferendis? Fugiat tenetur repellat aut eligendi voluptatibus recusandae fuga,
-                                    reprehenderit magni.</p>
-                                <a href="#" class=" text-dark fw-semibold ">READ MORE
-                                    <i class="fa fa-long-arrow-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
+                    @endforeach
                 </div>
             </div>
         </section>
@@ -213,33 +171,17 @@
                     Explore Our Hotels Benefits<br> Why Take Our Services?
                 </h3>
                 <div class="row row-cols-1 row-cols-md-3 gx-5 gy-5 ">
+                    @foreach($services as $item)
                     <div class="col ">
                         <div class="card h-100  py-5 px-1 rounded-0 about-us-popular-features-card">
                             <div class="svg-content mx-auto">
-                                <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
-                                     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs"
-                                     width="80" height="80" x="0" y="0" viewBox="0 0 64 64"
-                                     style="enable-background:new 0 0 512 512" xml:space="preserve" class=""
-                                     fill="#FCD12A">
-                                    <g>
-                                        <g data-name="Layer 11">
-                                            <path
-                                                d="M21 28h-2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2ZM34 28h-2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2Z"
-                                                class=""></path>
-                                            <path
-                                                d="m59.66 26.546-8.844-1.179a7.044 7.044 0 0 1-4.024-1.989l-7.913-7.914A4.968 4.968 0 0 0 35.343 14H7.8a5.012 5.012 0 0 0-4.7 3.291l-2.317 6.38A12.962 12.962 0 0 0 0 28.114V39a3 3 0 0 0 3 3h3.08a6.991 6.991 0 0 0 13.84 0h22.16a6.991 6.991 0 0 0 13.84 0H61a3 3 0 0 0 3-3v-7.5a5.015 5.015 0 0 0-4.34-4.954ZM62 33.78l-1.527-.3A3.008 3.008 0 0 1 58.444 32H62ZM2 30h2.727a1.944 1.944 0 0 1-.956.814L2 31.523Zm11 4a7 7 0 0 0-6.92 6H5.069a7.993 7.993 0 0 1 15.862 0H19.92A7 7 0 0 0 13 34Zm0 12a5 5 0 1 1 5-5 5.006 5.006 0 0 1-5 5Zm36-12a7 7 0 0 0-6.92 6h-1.011a7.993 7.993 0 0 1 15.862 0H55.92A7 7 0 0 0 49 34Zm0 12a5 5 0 1 1 5-5 5.006 5.006 0 0 1-5 5Zm12-6h-2.051a10 10 0 0 0-19.9 0h-16.1a10 10 0 0 0-19.9 0H3a1 1 0 0 1-1-1v-5.323l2.514-1.006A3.935 3.935 0 0 0 7 29a1 1 0 0 0-1-1H2.005a10.972 10.972 0 0 1 .657-3.645l2.32-6.381A3.01 3.01 0 0 1 7.8 16h27.543a2.983 2.983 0 0 1 2.122.878l7.913 7.914a9.043 9.043 0 0 0 5.175 2.557l8.847 1.179A3 3 0 0 1 61.589 30H57a1 1 0 0 0-.949 1.316l.266.8a5.011 5.011 0 0 0 3.763 3.322l1.92.382V39a1 1 0 0 1-1 1Z"
-                                                class=""></path>
-                                            <path
-                                                d="M13 37a4 4 0 1 0 4 4 4 4 0 0 0-4-4Zm0 6a2 2 0 1 1 2-2 2 2 0 0 1-2 2ZM49 37a4 4 0 1 0 4 4 4 4 0 0 0-4-4Zm0 6a2 2 0 1 1 2-2 2 2 0 0 1-2 2ZM13 17H8.386a3.014 3.014 0 0 0-2.809 1.947l-1.5 4A3 3 0 0 0 6.886 27H13a1 1 0 0 0 1-1v-8a1 1 0 0 0-1-1Zm-1 8H6.886a1 1 0 0 1-.936-1.351l1.5-4A1 1 0 0 1 8.386 19H12ZM26 17h-9a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-8a1 1 0 0 0-1-1Zm-1 8h-7v-6h7ZM37.879 18.464a1 1 0 1 0-1.414 1.414L41.586 25H31v-6h3a1 1 0 0 0 0-2h-4a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h14a1 1 0 0 0 .707-1.707Z"
-                                                class=""></path>
-                                        </g>
-                                    </g>
-                                </svg>
+                                <img src="{{asset('storage/service-images/'.$item->image)}}" class="card-img-top rounded-0" style="height: 150px;width: 150px"
+                                     alt="card image">
                             </div>
                             <div class="card-body  pt-4">
-                                <h5 class="card-title text-center fw-bold">Free Transportion</h5>
+                                <h5 class="card-title text-center fw-bold">{{$item->title}}</h5>
                                 <p class="card-text text-center py-2 small">
-                                    Lorem ipsum dolor sit amet consectetur adipisicid.
+                                   {{$item->description}}
                                 </p>
                                 <div class="text-center d-flex align-items-center justify-content-center">
                                     <a href="javascript:void(0)" class="text-dark fw-semibold">
@@ -249,75 +191,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="card h-100 py-5 px-1 rounded-0 about-us-popular-features-card">
-                            <div class="svg-content mx-auto">
-                                <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
-                                     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs"
-                                     width="80" height="80" x="0" y="0" viewBox="0 0 512.001 512.001"
-                                     style="enable-background:new 0 0 512 512" xml:space="preserve" class=""
-                                     fill="#FCD12A">
-                                    <g>
-                                        <path
-                                            d="M284.187 401.559c0-12.331-8.124-22.799-19.3-26.336-3.216-45.543-41.299-81.615-87.647-81.615h-44.23l-6.947-100.42h253.24l-15.78-50.21h-17.12l-11.046-34.143H256.07V56.068l42.791-9.985c10.281-2.399 17.461-11.447 17.461-22.004v-.993c0-6.983-3.15-13.46-8.642-17.772-5.493-4.311-12.534-5.833-19.316-4.176l-77.483 18.94v88.759h-79.287l-11.046 34.143h-17.12l-15.78 50.21h23.316l6.947 100.42h-10.965c-46.349 0-84.43 36.072-87.647 81.615C8.124 378.76 0 389.229 0 401.559c0 7.905 3.339 15.045 8.681 20.084C3.339 426.682 0 433.822 0 441.727c0 12.396 8.21 22.911 19.478 26.391 3.109 24.442 24.037 43.4 49.309 43.4H215.4c25.273 0 46.2-18.958 49.309-43.4 11.268-3.481 19.478-13.995 19.478-26.391 0-7.905-3.339-15.045-8.681-20.084 5.342-5.039 8.681-12.179 8.681-20.084zM225.944 31.903l65.995-16.132a7.487 7.487 0 0 1 6.439 1.392 7.487 7.487 0 0 1 2.881 5.924v.993a7.503 7.503 0 0 1-5.82 7.335l-54.431 12.7v64.722h-15.063V31.903zm-83.392 91.996H324.4l6.172 19.08H136.38l6.172-19.08zm-34.381 54.227 6.312-20.084h237.984l6.312 20.084H108.171zm-1.224 130.545h70.294c37.601 0 68.637 28.655 72.418 65.273H34.529c3.781-36.618 34.817-65.273 72.418-65.273zM27.615 454.279c-6.922 0-12.552-5.631-12.552-12.552 0-6.922 5.631-12.552 12.552-12.552h8.351l35.515 25.105H27.615zm102.435-4.242-19.237 13.598-48.751-34.46h38.475l29.513 20.862zm-3.418-20.862h97.502l-48.752 34.46-48.75-34.46zm88.768 67.281H68.787c-16.517 0-30.372-11.62-33.82-27.113h57.825l18.021 12.738 32.285-22.821 32.286 22.821 18.021-12.738h55.816c-3.449 15.493-17.304 27.113-33.821 27.113zm41.172-42.177h-41.858l35.516-25.105h6.341c6.922 0 12.552 5.631 12.552 12.552.001 6.923-5.629 12.553-12.551 12.553zm0-40.167H27.615c-6.922 0-12.552-5.63-12.552-12.552s5.631-12.552 12.552-12.552h228.957c6.922 0 12.552 5.63 12.552 12.552s-5.63 12.552-12.552 12.552z">
-                                        </path>
-                                        <path
-                                            d="M501.093 293.608v-96.403h-45.189v33.138h-45.189v-22.092h-45.189v22.092h-14.561v-22.092h-45.189v85.357H287.84l23.733 217.91h176.693l23.733-217.91h-10.906zm-30.125-81.34h15.063v81.34h-15.063v-81.34zm-30.126 33.139h15.063v76.844l-11.326 31.609h-3.737V245.407zm-30.126 0h15.063V353.86h-15.063V245.407zm-30.126-22.093h15.063V353.86H380.59V223.314zm-29.624 22.093h14.561V353.86h-10.264l-4.297-11.992v-96.461zm-30.126-22.093h15.063v76.517l-2.23-6.223H320.84v-70.294zm153.915 273.142H325.086l-20.451-187.784h18.436l21.59 60.252h110.521l21.59-60.252h18.436l-20.453 187.784z">
-                                        </path>
-                                        <path
-                                            d="m327.988 383.986 10.609 97.407h122.647l10.608-97.407H327.988zm119.745 82.344h-95.625l-7.328-67.281h110.28l-7.327 67.281zM88.871 324.737h15.063V339.8H88.871zM119.329 333.775h15.063v15.063h-15.063zM149.796 333.775h15.063v15.063h-15.063zM180.253 324.737h15.063V339.8h-15.063zM150.278 208.251h79.331v15.063h-79.331zM244.672 208.251h19.936v15.063h-19.936z">
-                                        </path>
-                                        <path
-                                            d="M392.891 425.157h15.063v15.063h-15.063zM423.017 425.157h14.059v15.063h-14.059zM362.766 425.157h15.063v15.063h-15.063z">
-                                        </path>
-                                    </g>
-                                </svg>
-                            </div>
-                            <div class="card-body  pt-4">
-                                <h5 class="card-title text-center fw-bold">Food & Drinks</h5>
-                                <p class="card-text text-center py-2 small">
-                                    Lorem ipsum dolor sit amet consectetur adipisicid.
-                                </p>
-                                <div class="text-center d-flex align-items-center justify-content-center">
-                                    <a href="javascript:void(0)" class="text-dark fw-semibold">
-                                        READ MORE <i class="fa fa-long-arrow-right ps-2" aria-hidden="true"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col ">
-                        <div class="card h-100 py-5 px-1 rounded-0 about-us-popular-features-card">
-                            <div class="svg-content mx-auto">
-                                <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
-                                     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs"
-                                     width="80" height="80" x="0" y="0" viewBox="0 0 20.766 20.766"
-                                     style="enable-background:new 0 0 512 512" xml:space="preserve" class=""
-                                     fill="#FCD12A">
-                                    <g>
-                                        <circle cx="10.432" cy="15.771" r="2.426" style="" class=""></circle>
-                                        <path
-                                            d="M16.23 9.926c-.036-.037-.074-.07-.111-.104l-.109-.103c-.018-.019-.038-.033-.061-.051a7.914 7.914 0 0 0-10.932.257l-.351.352-.486.486a1.522 1.522 0 0 0 .004 2.15 1.52 1.52 0 0 0 2.15.004l.838-.838a4.89 4.89 0 0 1 6.904-.001l.605.586a1.508 1.508 0 0 0 2.131-.005 1.5 1.5 0 0 0 .443-1.066 1.483 1.483 0 0 0-.439-1.063l-.586-.604z"
-                                            style="" class=""></path>
-                                        <path
-                                            d="m20.363 6.927-.504-.504c-.002-.002-.003-.005-.007-.006l-.398-.4a1.435 1.435 0 0 0-.226-.181c-5.113-4.489-12.89-4.351-17.84.411-.024.022-.051.037-.075.061l-.91.911a1.384 1.384 0 0 0 .006 1.959 1.384 1.384 0 0 0 1.959.005l.91-.909c.006-.008.011-.015.017-.02 4.003-3.867 10.353-3.891 14.388-.079l.716.717a1.387 1.387 0 0 0 1.96-.005 1.388 1.388 0 0 0 .004-1.96z"
-                                            style="" class=""></path>
-                                    </g>
-                                </svg>
-                            </div>
-                            <div class="card-body pt-4">
-                                <h5 class="card-title text-center fw-bold">Free Wi-fi Network</h5>
-                                <p class="card-text text-center py-2 small">
-                                    Lorem ipsum dolor sit amet consectetur adipisicid.
-                                </p>
-                                <div class="text-center d-flex align-items-center justify-content-center">
-                                    <a href="javascript:void(0)" class="text-dark fw-semibold">
-                                        READ MORE <i class="fa fa-long-arrow-right ps-2" aria-hidden="true"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </section>
@@ -332,116 +206,25 @@
                 </h3>
                 <div class="slider-area">
                     <div class="container slider-area-container">
-                        <div class="slider2-active slider-active arrow-style">
-                            <div>
-                                <div class="slick-wrap d-flex single-caro-item">
-                                    <div class="content-section">
-                                        <p class="">
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur non,
-                                            corrupti dolorum nisi
-                                            cumque totam cum voluptas quos molestias, omnis ipsum, dignissimos
-                                            perspiciatis tenetur sint
-                                            illum! Nihil alias quidem laboriosam.
-                                        </p>
-                                        <div class="d-flex align-items-center feedbacker-name">
-                                            <span></span>
-                                            <h5 class="ps-3 fw-semibold">James M. Varney</h5>
-                                            <i class="fa fa-quote-right"></i>
+
+                            <div class="slider2-active slider-active arrow-style">
+                                @foreach($feedback as $item)
+                                <div>
+                                    <div class="slick-wrap d-flex single-caro-item">
+                                        <div class="content-section">
+                                            <p class="">
+                                                {{$item->description}}
+                                            </p>
+                                            <div class="d-flex align-items-center feedbacker-name">
+                                                <span></span>
+                                                <h5 class="ps-3 fw-semibold">{{$item->name}}</h5>
+                                                <i class="fa fa-quote-right"></i>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                                @endforeach
                             </div>
-                            <div>
-                                <div class="slick-wrap d-flex single-caro-item">
-                                    <div class="content-section">
-                                        <p class="">
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur non,
-                                            corrupti dolorum nisi
-                                            cumque totam cum voluptas quos molestias, omnis ipsum, dignissimos
-                                            perspiciatis tenetur sint
-                                            illum! Nihil alias quidem laboriosam.
-                                        </p>
-                                        <div class="d-flex align-items-center feedbacker-name">
-                                            <span></span>
-                                            <h5 class="ps-3 fw-semibold">James M. Varney</h5>
-                                            <i class="fa fa-quote-right"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="slick-wrap d-flex single-caro-item">
-                                    <div class="content-section">
-                                        <p class="">
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur non,
-                                            corrupti dolorum nisi
-                                            cumque totam cum voluptas quos molestias, omnis ipsum, dignissimos
-                                            perspiciatis tenetur sint
-                                            illum! Nihil alias quidem laboriosam.
-                                        </p>
-                                        <div class="d-flex align-items-center feedbacker-name">
-                                            <span></span>
-                                            <h5 class="ps-3 fw-semibold">James M. Varney</h5>
-                                            <i class="fa fa-quote-right"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="slick-wrap d-flex single-caro-item">
-                                    <div class="content-section">
-                                        <p class="">
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur non,
-                                            corrupti dolorum nisi
-                                            cumque totam cum voluptas quos molestias, omnis ipsum, dignissimos
-                                            perspiciatis tenetur sint
-                                            illum! Nihil alias quidem laboriosam.
-                                        </p>
-                                        <div class="d-flex align-items-center feedbacker-name">
-                                            <span></span>
-                                            <h5 class="ps-3 fw-semibold">James M. Varney</h5>
-                                            <i class="fa fa-quote-right"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="slick-wrap d-flex single-caro-item">
-                                    <div class="content-section">
-                                        <p class="">
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur non,
-                                            corrupti dolorum nisi
-                                            cumque totam cum voluptas quos molestias, omnis ipsum, dignissimos
-                                            perspiciatis tenetur sint
-                                            illum! Nihil alias quidem laboriosam.
-                                        </p>
-                                        <div class="d-flex align-items-center feedbacker-name">
-                                            <span></span>
-                                            <h5 class="ps-3 fw-semibold">James M. Varney</h5>
-                                            <i class="fa fa-quote-right"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="slick-wrap d-flex single-caro-item">
-                                    <div class="content-section">
-                                        <p class="">
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur non,
-                                            corrupti dolorum nisi
-                                            cumque totam cum voluptas quos molestias, omnis ipsum, dignissimos
-                                            perspiciatis tenetur sint
-                                            illum! Nihil alias quidem laboriosam.
-                                        </p>
-                                        <div class="d-flex align-items-center feedbacker-name">
-                                            <span></span>
-                                            <h5 class="ps-3 fw-semibold">James M. Varney</h5>
-                                            <i class="fa fa-quote-right"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

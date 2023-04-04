@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\frontend;
+namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\RoomSearchRequest;
 use App\Models\RoomBooking;
 use App\Models\Rooms;
 use Carbon\Carbon;
@@ -40,7 +41,7 @@ class FrontendRoomBookingController extends Controller
              return Redirect::back()->with('Error','User not able to booking');
         }
     }
-    public function roomSearch(Request $request){
+    public function roomSearch(RoomSearchRequest $request){
 //        dd($request->all());
 //        dd(request('arrive_date'));
         $roomGrid = Rooms::select('rooms.*')

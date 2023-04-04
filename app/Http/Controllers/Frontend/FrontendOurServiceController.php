@@ -1,8 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\frontend;
+namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Feedback;
+use App\Models\Services;
 use Illuminate\Http\Request;
 
 class FrontendOurServiceController extends Controller
@@ -13,7 +15,9 @@ class FrontendOurServiceController extends Controller
 
     public function ourService()
     {
-        return view('frontend.our_service_page');
+        $services = Services::all();
+        $feedback=Feedback::all();
+        return view('frontend.our_service_page',compact('services','feedback'));
     }
     public function index()
     {
