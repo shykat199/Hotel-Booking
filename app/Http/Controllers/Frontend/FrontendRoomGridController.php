@@ -15,9 +15,9 @@ class FrontendRoomGridController extends Controller
      */
 
     public  function roomGrid(){
-        $roomGrid = Rooms::select('rooms.*','pricing.nightly')
-                    ->Join('rooms','rooms.id','pricing.room_id')->get();
-        dd($roomGrid);
+        $roomGrid = Rooms::select('rooms.*','pricings.nightly')
+                    ->Join('pricings','rooms.id','pricings.room_id')->get();
+//        dd($roomGrid);
 
 //        $roomGrid=DB::table('rooms')->paginate(3);
 //        $rooms = Rooms::find($id);

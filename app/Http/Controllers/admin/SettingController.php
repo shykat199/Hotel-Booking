@@ -21,12 +21,14 @@ class SettingController extends Controller
     {
 //        dd($request->all());
         $data = $request->except(['_method', '_token']);
+
+        //dd($data);
         foreach($data as $key => $value) {
 
             if ($key === 'logo') {
 
                 if ($request->hasFile('logo')) {
-                    $logo= Settings::where('name','=','logo')->pluck('value');
+                    $logo = Settings::where('name', '=', 'logo')->pluck('value');
                     //dd($logo);
                     Storage::delete('/public/logo/' . $logo[0]);
                     $name = time() . '.' . $request->file('logo')->getClientOriginalExtension();
@@ -37,14 +39,14 @@ class SettingController extends Controller
                         'value' => $name,
                     ]);
                 }
+            }
                 else{
                     $createSetting = Settings::updateOrCreate(['name' => $key], ['value' => $value]);
                 }
-            }
 
 
         }
-//        dd($data);
+//        dd($createSetting);
         return to_route('setting.index.page')->with('success','Data Entry Successfully done');
     }
 }
