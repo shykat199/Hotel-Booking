@@ -7,12 +7,12 @@ use Illuminate\Support\Facades\Route;
 //Route::middleware();
 //login page.....
 Route::get('/login', function () {
-    return view('admin.login_Signup.login_page');
+    return view('admin.login_signup.login_page');
 })->name('main.login.page');
 
 //register page......
 Route::get('/register', function () {
-    return view('admin.login_Signup.register_page');
+    return view('admin.login_signup.register_page');
 })->name('main.register.page');
 
 
